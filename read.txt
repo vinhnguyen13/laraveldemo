@@ -1,0 +1,5 @@
+composer create-project laravel/laravel laraveldemo
+
+php artisan migrate
+
+php artisan make:auth
