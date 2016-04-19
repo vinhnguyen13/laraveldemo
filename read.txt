@@ -1,5 +1,4 @@
+composer global require "laravel/installer"
 composer create-project laravel/laravel laraveldemo
-
 php artisan migrate
-
 php artisan make:auth
