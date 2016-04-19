@@ -67,9 +67,6 @@
                             </ul>
                         </li>
                     @endif
-                    <li><a href="/language/en">EN</a></li>
-                    <li><a href="/language/vi">VN</a></li>
-                    <li>{{ trans('general.langactive') }}</li>
                 </ul>
             </div>
 

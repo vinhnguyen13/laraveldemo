@@ -8,6 +8,7 @@
 namespace App\Http\Middleware;
 
 use Closure;
+use Illuminate\Support\Facades\Config;
 
 class App {
 
@@ -23,6 +24,9 @@ class App {
         if(!\Session::has('locale'))
         {
             \Session::put('locale', \Config::get('app.locale'));
+        }
+        if (in_array($request->segment(1), Config::get('app.alt_langs'))) {
+            \Session::put('locale', $request->segment(1));
         }
 
         app()->setLocale(\Session::get('locale'));

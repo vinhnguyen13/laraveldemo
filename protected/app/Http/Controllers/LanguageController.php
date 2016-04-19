@@ -17,7 +17,7 @@ class LanguageController extends Controller
     public function choose(Request $request, $locale=nul)
     {
         Session::set('locale', $locale);
-        return Redirect::back();
+        return Redirect::to('/'.$locale);
     }
 
 }

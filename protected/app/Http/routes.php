@@ -20,4 +20,30 @@ Route::auth();
 Route::get('/home', 'HomeController@index');
 
 
-Route::get('/language/{locale}', ['uses' => 'LanguageController@choose']);
+/**
+ * url with multi languages
+ */
+if (in_array(Request::segment(1), Config::get('app.alt_langs'))) {
+
+    App::setLocale(Request::segment(1));
+    Config::set('app.locale_prefix', Request::segment(1));
+}
+
+
+Route::group(array('prefix' => Config::get('app.locale_prefix')), function()
+{
+    Route::get('/', function () {
+        return view('welcome', ['content'=> PHP_EOL.\Illuminate\Foundation\Inspiring::quote().PHP_EOL]);
+    });
+    Route::get(Lang::get('routes.home'), ['uses' => 'HomeController@index']);
+
+    Route::get('/language/{locale}', ['uses' => 'LanguageController@choose']);
+
+    Route::get('api/users/{user}', function (App\User $user) {
+        return $user;
+    });
+});
+
+
+
+
