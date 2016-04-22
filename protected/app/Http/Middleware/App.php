@@ -9,6 +9,7 @@ namespace App\Http\Middleware;
 
 use Closure;
 use Illuminate\Support\Facades\Config;
+use Illuminate\Support\Facades\View;
 
 class App {
 
@@ -21,6 +22,9 @@ class App {
      */
     public function handle($request, Closure $next)
     {
+        /**
+         * set language
+         */
         if(!\Session::has('locale'))
         {
             \Session::put('locale', \Config::get('app.locale'));
@@ -30,7 +34,6 @@ class App {
         }
 
         app()->setLocale(\Session::get('locale'));
-
         return $next($request);
     }
 
