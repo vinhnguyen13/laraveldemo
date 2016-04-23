@@ -2,3 +2,8 @@ composer global require "laravel/installer"
 composer create-project laravel/laravel laraveldemo
 php artisan migrate
 php artisan make:auth
+
+
+------------------ clear compile and rebuild ------------------
+php artisan clear-compiled
+php artisan optimize --force
