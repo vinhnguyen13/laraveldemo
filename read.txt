@@ -1,9 +1,23 @@
 composer global require "laravel/installer"
 composer create-project laravel/laravel laraveldemo
 php artisan migrate
+php artisan migrate:rollback
 php artisan make:auth
 
 
 ------------------ clear compile and rebuild ------------------
 php artisan clear-compiled
 php artisan optimize --force
+
+------------------ artisan list ------------------
+php artisan list
+
+------------------ publish vendor ------------------
+php artisan vendor:publish
+
+------------------ Create provider ------------------
+php artisan make:provider TimezonesServiceProvider
+
+------------------ Autoload another packages ------------------
+override psr-4 in composer.json: "Jimbolino\\Laravel\\ModelBuilder\\": "packages/jimbolino/laravel-model-builder/src"
+composer dump-autoload

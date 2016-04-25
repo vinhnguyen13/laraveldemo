@@ -45,5 +45,6 @@ Route::group(array('prefix' => Config::get('app.locale_prefix')), function()
 });
 
 
+Route::get('/generate/models', ['uses' => '\\Jimbolino\\Laravel\\ModelBuilder\\ModelGenerator5@start', 'namespace' => 'Jimbolino\Laravel\ModelBuilder']);
 
 
