@@ -21,3 +21,10 @@ php artisan make:provider TimezonesServiceProvider
 ------------------ Autoload another packages ------------------
 override psr-4 in composer.json: "Jimbolino\\Laravel\\ModelBuilder\\": "packages/jimbolino/laravel-model-builder/src"
 composer dump-autoload
+
+------------------ Clear cache ------------------
+php artisan view:clear
+php artisan cache:clear
+
+
+php artisan route:list
