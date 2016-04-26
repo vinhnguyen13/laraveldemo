@@ -166,6 +166,7 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
         App\Modules\ModuleServiceProvider::class,
+        Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider
 
     ],
 
