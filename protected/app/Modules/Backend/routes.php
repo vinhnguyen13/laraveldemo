@@ -1,6 +1,10 @@
 <?php
 
 Route::group(['prefix' => 'admin', 'module' => 'Backend', 'namespace' => 'App\Modules\Backend\Controllers'], function(){
+
+    Route::get('/test',function(){
+        return view("home.index");
+    });
     
     Route::get('/', ['uses' => 'DashboardController@getIndex']);
     

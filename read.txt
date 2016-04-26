@@ -31,3 +31,5 @@ php artisan cache:clear
 
 
 php artisan route:list
+
+php artisan make:model Modules\Core\Models\SomeModel

@@ -9,6 +9,9 @@ class ModuleServiceProvider extends ServiceProvider{
     public function register(){
         $this->app->bind('view.finder', function($app)
         {
+            /**
+             * set themes
+             */
             $paths = $app['config']['view.paths'];
             if(Request::is('admin') || Request::is('admin/*')){
                 $theme = \Config::get('site.theme.backend');
@@ -16,7 +19,7 @@ class ModuleServiceProvider extends ServiceProvider{
                 $theme = \Config::get('site.theme.frontend');
             }
 //            $paths = Config::get('view.paths');
-            array_unshift($paths, base_path() . '/themes/' . $theme . '/views');
+            array_unshift($paths, base_path() . '/resources/themes/' . $theme . '/views');
             \Config::set('view.paths', $paths);
 
             return new FileViewFinder($app['files'], $paths);

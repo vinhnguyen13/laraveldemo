@@ -165,8 +165,17 @@ return [
         App\Providers\AuthServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
+        /**
+         * Modules app
+         */
         App\Modules\ModuleServiceProvider::class,
+        /**
+         * IDE helper
+         */
         Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class,
+        /**
+         * User ACL
+         */
         Illuminate\Foundation\Providers\ArtisanServiceProvider::class,
         Illuminate\Auth\AuthServiceProvider::class,
         Kodeine\Acl\AclServiceProvider::class
