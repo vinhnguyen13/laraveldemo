@@ -166,7 +166,10 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
         App\Modules\ModuleServiceProvider::class,
-        Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider
+        Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class,
+        Illuminate\Foundation\Providers\ArtisanServiceProvider::class,
+        Illuminate\Auth\AuthServiceProvider::class,
+        Kodeine\Acl\AclServiceProvider::class
 
     ],
 

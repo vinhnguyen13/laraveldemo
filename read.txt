@@ -1,11 +1,14 @@
 composer global require "laravel/installer"
 composer create-project laravel/laravel laraveldemo
-php artisan migrate
-php artisan migrate:rollback
 php artisan make:auth
 
+------------------ Migrate ------------------
+php artisan migrate --path="database/migrations/1_start"
+php artisan migrate
+php artisan migrate:rollback
 
------------------- clear compile and rebuild ------------------
+
+------------------ Clear compile and rebuild ------------------
 php artisan clear-compiled
 php artisan optimize --force
 
